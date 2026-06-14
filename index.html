@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio Dewan Eksekutif Mahasiswa - UPS Bekasi</title>
+    <title>Dewan Eksekutif Mahasiswa - UPS Bekasi</title>
+    
+    <link rel="icon" type="image/png" href="img/Logokampus.png">
     
     <!-- Bootstrap 5.3 & FontAwesome -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -17,260 +19,8 @@
     
     <!-- AOS Animation -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
-   <style>
-    html {
-        scroll-behavior: smooth;
-    }
-    body {
-        font-family: 'Poppins', sans-serif;
-        background-color: #f3f5f9;
-        color: #333;
-        overflow-x: hidden;
-    }
-    
-    /* Navbar Glassmorphism */
-    .navbar-custom {
-        background: rgba(33, 37, 41, 0.85) !important;
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-    .navbar-brand img {
-        width: 45px;      /* Ukuran proporsional untuk bar navigasi */
-        height: 45px;
-        object-fit: contain;
-        transition: transform 0.3s ease;
-    }
-    .navbar-brand:hover img {
-        transform: scale(1.05);
-    }
+    <link href="style.css" rel="stylesheet">
 
-    /* Hero Section */
-    .hero-section {
-        background: radial-gradient(circle at 20% 30%, #2a5298 0%, #1e3c72 80%);
-        position: relative;
-        color: white;
-        padding: 140px 0 120px 0;
-        overflow: hidden;
-    }
-    .hero-section::before {
-        content: "";
-        position: absolute;
-        top: 0; left: 0; right: 0; bottom: 0;
-        background: url('https://www.transparenttextures.com/patterns/cubes.png');
-        opacity: 0.15;
-    }
-    .hero-logo {
-        max-width: 150px;
-        height: auto;
-        filter: drop-shadow(0px 8px 16px rgba(0, 0, 0, 0.25));
-    }
-
-    /* Tombol 3D */
-    .btn-3d {
-        transform: translateY(0);
-        transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
-        box-shadow: 0 4px 15px rgba(255, 193, 7, 0.4);
-    }
-    .btn-3d:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 12px 25px rgba(255, 193, 7, 0.5);
-    }
-
-    /* Efek Kartu Berdimensi Tinggi (Sudah Digabungkan) */
-    .card-3d {
-        border: none;
-        border-radius: 16px;
-        background: #ffffff;
-        position: relative;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    }
-    .card-3d:hover {
-        transform: translateY(-5px) scale(1.02);
-        box-shadow: 0 10px 20px rgba(0,0,0,0.15) !important;
-    }
-
-    /* Nav Pills */
-    .nav-pills .nav-link {
-        color: #2a5298;
-        border: 1px solid rgba(42, 82, 152, 0.2);
-        margin-bottom: 12px;
-        font-weight: 600;
-        border-radius: 12px;
-        background: #fff;
-        transition: all 0.3s ease;
-    }
-    .nav-pills .nav-link:hover {
-        background: rgba(42, 82, 152, 0.05);
-        transform: translateX(5px);
-    }
-    .nav-pills .nav-link.active {
-        background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-        border-color: transparent;
-        box-shadow: 0 8px 20px rgba(42, 82, 152, 0.3);
-        transform: translateX(8px);
-        color: white !important;
-    }
-
-    /* Komponen Member & Proker */
-    .proker-badge {
-        background-color: #ffffff;
-        color: #1e3c72;
-        border-left: 5px solid #2a5298;
-        border-radius: 10px !important;
-        transition: all 0.3s ease;
-    }
-    .proker-badge:hover {
-        transform: scale(1.03);
-        box-shadow: 0 8px 15px rgba(0,0,0,0.05) !important;
-    }
-    .member-list {
-        background-color: #fff;
-        border-radius: 14px;
-        padding: 20px;
-        border: 1px solid #eef2f7;
-    }
-    .member-item {
-        display: flex;
-        align-items: center;
-        margin-bottom: 15px;
-    }
-    .member-item:last-child {
-        margin-bottom: 0;
-    }
-    .member-avatar {
-        width: 45px;
-        height: 45px;
-        background: linear-gradient(135deg, #2a5298, #1e3c72);
-        color: white;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: bold;
-        margin-right: 15px;
-        box-shadow: 0 4px 10px rgba(42, 82, 152, 0.2);
-        flex-shrink: 0;
-    }
-
-    /* Galeri */
-    .gallery-img {
-        height: 250px;
-        object-fit: cover;
-        border-radius: 12px;
-        width: 100%;
-        transition: transform 0.5s ease;
-    }
-    .card-gallery {
-        overflow: hidden;
-        border-radius: 12px;
-    }
-    .card-gallery:hover .gallery-img {
-        transform: scale(1.06);
-    }
-    .carousel-inner {
-        border-radius: 20px;
-        box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-    }
-    .carousel-inner img {
-        height: 480px;
-        object-fit: cover;
-        filter: brightness(75%);
-    }
-    .carousel-caption {
-        background: rgba(17, 34, 64, 0.75);
-        backdrop-filter: blur(8px);
-        -webkit-backdrop-filter: blur(8px);
-        border-radius: 16px;
-        padding: 20px;
-        bottom: 30px;
-        border: 1px solid rgba(255,255,255,0.1);
-    }
-
-    /* Counter Box */
-    .counter-card {
-        border-radius: 16px;
-        border-top: 4px solid #2a5298;
-        background: #fff;
-        transition: all 0.4s ease;
-    }
-    .counter-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
-    }
-    .counter-number {
-        font-size: 2.8rem;
-        font-weight: 700;
-        background: linear-gradient(135deg, #1e3c72, #2a5298);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-
-    /* Typing Effect Cursor */
-    #typing-text::after {
-        content: '|';
-        animation: blink 0.7s infinite;
-    }
-    @keyframes blink {
-        0%, 100% { opacity: 1; }
-        50% { opacity: 0; }
-    }
-
-    footer {
-        background-color: #0b132b;
-        color: #a8b2d1;
-        position: relative;
-    }
-    footer::before {
-        content: "";
-        position: absolute;
-        top:0; left:0; right:0; height:4px;
-        background: linear-gradient(to right, #1e3c72, #2a5298, #ffc107);
-    }
-
-    /* Styling Pembungkus Logo Hero */
-    .hero-logo-wrapper {
-        position: relative;
-        display: inline-block;
-    }
-
-    /* Styling Utama Logo DEMA */
-    .hero-logo-custom {
-        width:350px;      
-        height: 350px;
-        object-fit: contain;
-        border-radius: 50%;
-        border: 5px solid #ffc107; 
-        background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.03));
-        backdrop-filter: blur(8px);
-        -webkit-backdrop-filter: blur(8px);
-        padding: 12px; 
-        box-shadow: 0 0 25px rgba(255, 193, 7, 0.6),  
-                    0 0 50px rgba(255, 193, 7, 0.3),  
-                    inset 0 0 20px rgba(255, 193, 7, 0.4); 
-        animation: logoFloatDema 4s infinite ease-in-out;
-        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-    }
-
-    /* Efek Hover Logo Hero */
-    .hero-logo-custom:hover {
-        transform: scale(1.05) translateY(-5px);
-        border-color: #ffe082; 
-        box-shadow: 0 0 35px rgba(255, 193, 7, 0.8),
-                    0 0 70px rgba(255, 193, 7, 0.5),
-                    inset 0 0 30px rgba(255, 193, 7, 0.6);
-        cursor: pointer;
-    }
-
-    /* Sistem Animasi Melayang Sinematik */
-    @keyframes logoFloatDema {
-        0% { transform: translateY(0px); }
-        50% { transform: translateY(-12px); }
-        100% { transform: translateY(0px); }
-    }
-</style>
 </head>
 <body>
 
@@ -278,7 +28,7 @@
    <nav class="navbar navbar-expand-lg navbar-dark sticky-top shadow-sm navbar-custom">
     <div class="container">
         <a class="navbar-brand fw-bold fs-4 d-flex align-items-center" href="#">
-            <img src="img/WhatsApp_Image_2026-06-05_at_09.20.27-removebg-preview.png" alt="Logo DEMA" class="me-2 rounded-circle border border-warning border-2">
+            <img src="img/Logokampus.png" alt="Logo DEMA" class="me-2 rounded-circle border border-warning border-2">
             PROFIL DEMA
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -303,14 +53,14 @@
         
         <div class="mb-5" data-aos="zoom-in" data-aos-delay="100">
             <div class="hero-logo-wrapper">
-                <img src="img/WhatsApp_Image_2026-06-05_at_09.20.27-removebg-preview.png" 
+                <img src="img/Logokampus.png" 
                      alt="Logo Besar DEMA UPS" 
                      class="hero-logo-custom img-fluid">
             </div>
         </div>
 
         <h1 class="display-4 fw-bold mb-1 text-white" data-aos="zoom-in" data-aos-delay="300" style="letter-spacing: 1px; text-shadow: 0 2px 10px rgba(0,0,0,0.5);">Dewan Eksekutif Mahasiswa</h1>
-        <h2 class="h2 fw-normal text-warning mb-4" data-aos="zoom-in" data-aos-delay="500" style="letter-spacing: 2px;">Universitas Panca Sakti Bekasi</h2>
+        <h2 class="h2 fw-normal text-warning mb-4" data-aos="zoom-in" data-aos-delay="500" style="letter-spacing: 2px;">Universitas Panca Sakti Bekasi Kampus B</h2>
         
         <div class="lead mb-5 fs-4" style="height: 40px; color: #e1e7f0;" data-aos="fade-up" data-aos-delay="700">
             <span id="typing-text"></span>
@@ -328,7 +78,7 @@
             <div class="card card-3d shadow p-4 h-100 bg-white border-start border-primary border-5">
                 <h2 class="fw-bold text-primary mb-3"><i class="fa-solid fa-university me-2"></i>Tentang DEMA</h2>
                 <p class="text-muted" style="font-size: 1.05rem; line-height: 1.8; text-align: justify;">
-                    DEMA (Dewan Eksekutif Mahasiswa) adalah organisasi mahasiswa yang bertugas sebagai lembaga eksekutif tertinggi perwakilan mahasiswa di tingkat universitas. DEMA berperan aktif sebagai agen perubahan (*agent of change*), pengawas sosial (*social control*), fasilitator aspirasi, serta pembangun integritas karakter di lingkungan Universitas Panca Sakti.
+                    DEMA (Dewan Eksekutif Mahasiswa) adalah organisasi mahasiswa yang bertugas sebagai lembaga eksekutif tertinggi perwakilan mahasiswa di tingkat universitas. DEMA berperan aktif sebagai agen perubahan (agent of change), pengawas sosial (social control*), fasilitator aspirasi, serta pembangun integritas karakter di lingkungan Universitas Panca Sakti.
                 </p>
             </div>
         </div>
@@ -438,8 +188,7 @@
                         </div>
                     </div>
 
-                    <!-- 2. KOMINFO -->
-                    <div class="tab-pane fade" id="content-kominfo" role="tabpanel">
+                   <div class="tab-pane fade" id="content-kominfo" role="tabpanel">
                         <h3 class="fw-bold text-dark mb-2">Divisi Komunikasi & Informasi</h3>
                         <p class="text-muted">Wajah digital DEMA. Mengelola narasi media sosial, publikasi informasi, rilisan pers, dan dokumentasi.</p>
                         <hr class="my-4">
@@ -718,113 +467,92 @@
         </div>
     </section>
 
-    <!-- PENCAPAIAN SECTION -->
-    <section id="pencapaian" class="bg-light py-5">
-        <div class="container py-4">
-            <h2 class="text-center fw-bold mb-5 text-primary" data-aos="fade-up">Pencapaian & Angka Kunci</h2>
-            <div class="row g-4">
-                <div class="col-md-3 col-sm-6 text-center" data-aos="fade-up" data-aos-delay="100">
-                    <div class="counter-card shadow-sm p-4 h-100">
-                        <div class="counter-number">15+</div>
-                        <div class="text-muted fw-medium mt-2">Program Kerja Sukses</div>
-                    </div>
+    <style>
+    /* Mengatur jarak lompatan scroll agar tidak tertutup navbar (asumsi tinggi navbar ± 80px) */
+    section {
+        scroll-margin-top: 90px; 
+    }
+</style>
+
+<section id="pencapaian" class="bg-light py-5">
+    <div class="container py-4">
+        <h2 class="text-center fw-bold mb-5 text-primary" data-aos="fade-up">Pencapaian & Angka Kunci</h2>
+        <div class="row g-4">
+            <div class="col-md-3 col-sm-6 text-center" data-aos="fade-up" data-aos-delay="100">
+                <div class="counter-card shadow-sm p-4 h-100">
+                    <div class="counter-number">15+</div>
+                    <div class="text-muted fw-medium mt-2">Program Kerja Sukses</div>
                 </div>
-                <div class="col-md-3 col-sm-6 text-center" data-aos="fade-up" data-aos-delay="200">
-                    <div class="counter-card shadow-sm p-4 h-100">
-                        <div class="counter-number">1.2k+</div>
-                        <div class="text-muted fw-medium mt-2">Mahasiswa Terlibat</div>
-                    </div>
+            </div>
+            <div class="col-md-3 col-sm-6 text-center" data-aos="fade-up" data-aos-delay="200">
+                <div class="counter-card shadow-sm p-4 h-100">
+                    <div class="counter-number">1.2k+</div>
+                    <div class="text-muted fw-medium mt-2">Mahasiswa Terlibat</div>
                 </div>
-                <div class="col-md-3 col-sm-6 text-center" data-aos="fade-up" data-aos-delay="300">
-                    <div class="counter-card shadow-sm p-4 h-100">
-                        <div class="counter-number">5+</div>
-                        <div class="text-muted fw-medium mt-2">Desa Mitra Binaan</div>
-                    </div>
+            </div>
+            <div class="col-md-3 col-sm-6 text-center" data-aos="fade-up" data-aos-delay="300">
+                <div class="counter-card shadow-sm p-4 h-100">
+                    <div class="counter-number">5+</div>
+                    <div class="text-muted fw-medium mt-2">Desa Mitra Binaan</div>
                 </div>
-                <div class="col-md-3 col-sm-6 text-center" data-aos="fade-up" data-aos-delay="400">
-                    <div class="counter-card shadow-sm p-4 h-100">
-                        <div class="counter-number">94%</div>
-                        <div class="text-muted fw-medium mt-2">Indeks Kepuasan Riset</div>
-                    </div>
+            </div>
+            <div class="col-md-3 col-sm-6 text-center" data-aos="fade-up" data-aos-delay="400">
+                <div class="counter-card shadow-sm p-4 h-100">
+                    <div class="counter-number">94%</div>
+                    <div class="text-muted fw-medium mt-2">Indeks Kepuasan Riset</div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- KONTAK SECTION -->
-    <section id="kontak" class="container my-5 py-5">
+<style>
+    section {
+        scroll-margin-top: 150px; /* Jarak aman dari navbar saat di-klik */
+    }
+    
+    #kontak {
+        /* Memaksa section kontak mengambil setidaknya 75% dari tinggi layar */
+        min-height: 80vh; 
+        display: flex;
+        align-items: center; /* Membuat kontennya berada pas di tengah secara vertikal */
+    }
+</style>
+
+<section id="kontak" class="bg-white py-5">
+    <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8 text-center" data-aos="fade-up">
                 <h2 class="fw-bold mb-3 text-primary">Hubungi DEMA UPS Bekasi</h2>
                 <p class="text-muted mb-5">Pintu aspirasi dan kemitraan terbuka lebar. Hubungi kami melalui kanal di bawah ini.</p>
+                
                 <div class="d-flex justify-content-center gap-4 flex-wrap">
-    <!-- TOMBOL INSTAGRAM -->
-    <a href="https://www.instagram.com/dem.psu?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="btn btn-outline-danger btn-lg rounded-pill px-4">
-        <i class="fa-brands fa-instagram me-2"></i>@dema.upsbekasi
-    </a>
+                    <a href="https://www.instagram.com/dem.psu?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="btn btn-outline-danger btn-lg rounded-pill px-4">
+                        <i class="fa-brands fa-instagram me-2"></i>@dema.upsbekasi
+                    </a>
 
-    <!-- TOMBOL YOUTUBE (Menggantikan Email) -->
-    <a href="https://www.youtube.com/@URL_YOUTUBE_DEMA_ANDA" target="_blank" class="btn btn-outline-danger btn-lg rounded-pill px-4" style="border-color: #ff0000;">
-        <i class="fa-brands fa-youtube me-2"></i>DEMA UPS TV
-    </a>
+                    <a href="https://youtube.com/@pancasaktibekasi.kampusb?si=GlvjunlmLY1yyYg2" target="_blank" class="btn btn-outline-danger btn-lg rounded-pill px-4" style="border-color: #ff0000;">
+                        <i class="fa-brands fa-youtube me-2"></i>Panca Sakti Kampus B TV
+                    </a>
 
-    <!-- TOMBOL WHATSAPP (Ganti nomor 628xxx sesuai nomor aspirasi DEMA) -->
-    <a href="https://wa.me/6289673659810?text=Halo%20DEMA%20UPS%20Bekasi,%20saya%20ingin%20menyampaikan%20aspirasi..." target="_blank" class="btn btn-outline-success btn-lg rounded-pill px-4">
-        <i class="fa-brands fa-whatsapp me-2"></i>Hubungi Aspirasi
-    </a>
-</div>
+                    <a href="https://wa.me/6289673659810?text=Halo%20DEMA%20UPS%20Bekasi,%20saya%20ingin%20menyampaikan%20aspirasi..." target="_blank" class="btn btn-outline-success btn-lg rounded-pill px-4">
+                        <i class="fa-brands fa-whatsapp me-2"></i>Hubungi Aspirasi
+                    </a>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- FOOTER -->
-    <footer class="text-center py-4 mt-5">
-        <div class="container">
-            <p class="mb-1 fw-bold text-white">&copy; 2026 Dewan Eksekutif Mahasiswa - Universitas Panca Sakti</p>
-            <small class="text-muted">Kampus B Bekasi • Dikembangkan dengan dedikasi penuh.</small>
-        </div>
-    </footer>
-
+<footer class="text-center py-4 mt-5">
+    <div class="container">
+        <p class="mb-1 fw-bold text-white">&copy; 2026 Dewan Eksekutif Mahasiswa - Universitas Panca Sakti</p>
+        <small class="text-muted">Kampus B Bekasi • Dikembangkan dengan dedikasi penuh.</small>
+    </div>
+</footer>
     <!-- JavaScript Bootstrap, AOS & Custom Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        // Inisialisasi Animasi AOS
-        AOS.init({
-            duration: 1000,
-            once: true
-        });
-
-        // Logika Animasi Mengetik (Typing Effect)
-        const textElement = document.getElementById("typing-text");
-        const phrases = ["Kolaboratif.", "Progresif.", "Solutif.", "Berintegritas."];
-        let phraseIndex = 0;
-        let characterIndex = 0;
-
-        function type() {
-            if (characterIndex < phrases[phraseIndex].length) {
-                textElement.textContent += phrases[phraseIndex].charAt(characterIndex);
-                characterIndex++;
-                setTimeout(type, 100);
-            } else {
-                setTimeout(erase, 1500);
-            }
-        }
-
-        function erase() {
-            if (characterIndex > 0) {
-                textElement.textContent = phrases[phraseIndex].substring(0, characterIndex - 1);
-                characterIndex--;
-                setTimeout(erase, 50);
-            } else {
-                phraseIndex = (phraseIndex + 1) % phrases.length;
-                setTimeout(type, 300);
-            }
-        }
-
-        document.addEventListener("DOMContentLoaded", function() {
-            setTimeout(type, 500);
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
