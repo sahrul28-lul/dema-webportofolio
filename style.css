@@ -1,0 +1,278 @@
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f3f5f9;
+  color: #333;
+  overflow-x: hidden;
+}
+
+/* Navbar Glassmorphism */
+.navbar-custom {
+  background: rgba(33, 37, 41, 0.85) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.navbar-brand img {
+  width: 45px; /* Ukuran proporsional untuk bar navigasi */
+  height: 45px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+.navbar-brand:hover img {
+  transform: scale(1.05);
+}
+
+/* Hero Section */
+.hero-section {
+  background: radial-gradient(circle at 20% 30%, #2a5298 0%, #1e3c72 80%);
+  position: relative;
+  color: white;
+  padding: 140px 0 120px 0;
+  overflow: hidden;
+}
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("https://www.transparenttextures.com/patterns/cubes.png");
+  opacity: 0.15;
+}
+.hero-logo {
+  max-width: 150px;
+  height: auto;
+  filter: drop-shadow(0px 8px 16px rgba(0, 0, 0, 0.25));
+}
+
+/* Tombol 3D */
+.btn-3d {
+  transform: translateY(0);
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(255, 193, 7, 0.4);
+}
+.btn-3d:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 25px rgba(255, 193, 7, 0.5);
+}
+
+/* Efek Kartu Berdimensi Tinggi (Sudah Digabungkan) */
+.card-3d {
+  border: none;
+  border-radius: 16px;
+  background: #ffffff;
+  position: relative;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+.card-3d:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Nav Pills */
+.nav-pills .nav-link {
+  color: #2a5298;
+  border: 1px solid rgba(42, 82, 152, 0.2);
+  margin-bottom: 12px;
+  font-weight: 600;
+  border-radius: 12px;
+  background: #fff;
+  transition: all 0.3s ease;
+}
+.nav-pills .nav-link:hover {
+  background: rgba(42, 82, 152, 0.05);
+  transform: translateX(5px);
+}
+.nav-pills .nav-link.active {
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  border-color: transparent;
+  box-shadow: 0 8px 20px rgba(42, 82, 152, 0.3);
+  transform: translateX(8px);
+  color: white !important;
+}
+
+/* Komponen Member & Proker */
+.proker-badge {
+  background-color: #ffffff;
+  color: #1e3c72;
+  border-left: 5px solid #2a5298;
+  border-radius: 10px !important;
+  transition: all 0.3s ease;
+}
+.proker-badge:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.05) !important;
+}
+.member-list {
+  background-color: #fff;
+  border-radius: 14px;
+  padding: 20px;
+  border: 1px solid #eef2f7;
+}
+.member-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.member-item:last-child {
+  margin-bottom: 0;
+}
+.member-avatar {
+  width: 45px;
+  height: 45px;
+  background: linear-gradient(135deg, #2a5298, #1e3c72);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin-right: 15px;
+  box-shadow: 0 4px 10px rgba(42, 82, 152, 0.2);
+  flex-shrink: 0;
+}
+
+/* Galeri */
+.gallery-img {
+  height: 250px;
+  object-fit: cover;
+  border-radius: 12px;
+  width: 100%;
+  transition: transform 0.5s ease;
+}
+.card-gallery {
+  overflow: hidden;
+  border-radius: 12px;
+}
+.card-gallery:hover .gallery-img {
+  transform: scale(1.06);
+}
+.carousel-inner {
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+.carousel-inner img {
+  height: 480px;
+  object-fit: cover;
+  filter: brightness(75%);
+}
+.carousel-caption {
+  background: rgba(17, 34, 64, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 16px;
+  padding: 20px;
+  bottom: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Counter Box */
+.counter-card {
+  border-radius: 16px;
+  border-top: 4px solid #2a5298;
+  background: #fff;
+  transition: all 0.4s ease;
+}
+.counter-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1) !important;
+}
+.counter-number {
+  font-size: 2.8rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Typing Effect Cursor */
+#typing-text::after {
+  content: "|";
+  animation: blink 0.7s infinite;
+}
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+footer {
+  background-color: #0b132b;
+  color: #a8b2d1;
+  position: relative;
+}
+footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(to right, #1e3c72, #2a5298, #ffc107);
+}
+
+/* Styling Pembungkus Logo Hero */
+.hero-logo-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+/* Styling Utama Logo DEMA */
+.hero-logo-custom {
+  width: 350px;
+  height: 350px;
+  object-fit: contain;
+  border-radius: 50%;
+  border: 5px solid #ffc107;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.12),
+    rgba(255, 255, 255, 0.03)
+  );
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 12px;
+  box-shadow:
+    0 0 25px rgba(255, 193, 7, 0.6),
+    0 0 50px rgba(255, 193, 7, 0.3),
+    inset 0 0 20px rgba(255, 193, 7, 0.4);
+  animation: logoFloatDema 4s infinite ease-in-out;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Efek Hover Logo Hero */
+.hero-logo-custom:hover {
+  transform: scale(1.05) translateY(-5px);
+  border-color: #ffe082;
+  box-shadow:
+    0 0 35px rgba(255, 193, 7, 0.8),
+    0 0 70px rgba(255, 193, 7, 0.5),
+    inset 0 0 30px rgba(255, 193, 7, 0.6);
+  cursor: pointer;
+}
+
+/* Sistem Animasi Melayang Sinematik */
+@keyframes logoFloatDema {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+
+  
+}
